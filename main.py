@@ -1,5 +1,5 @@
-import datetime, math
-import tkinter
+import datetime
+# import tkinter
 from tkinter import *
 # x= datetime.datetime.today()
 # print(x)
@@ -71,9 +71,12 @@ class Circle:
         self.entry1.place(x= 200, y=50)
 
     def area(self):
-        radius = 3.14*int(self.entry1.get())*int(self.entry1.get())
-        messagebox.showinfo("Area of circle is: ", str(radius))
+        try:
+            radius = 3.14*int(self.entry1.get())*int(self.entry1.get())
+            messagebox.showinfo("Area of circle is: ", str(radius))
 
+        except ValueError:
+            messagebox.showinfo("Error", "Input proper value")
 top = Tk()
 top.geometry("400x400")
 objCircle = Circle(top)
